@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>RACOON</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Raccoon</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .toolbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+        .toolbar a:hover {
+            color: #007bff;
+        }
+        .section {
+            padding: 60px 20px;
+            min-height: 100vh;
+            border-bottom: 1px solid #eee;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #222;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+        }
+        .value-card {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+        .value-text {
+            flex: 1;
+        }
+        .value-image {
+            flex: 1;
+            text-align: center;
+        }
+        .value-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 50px 0;
+        }
+        .stat-item {
+            flex: 1;
+            padding: 20px;
+        }
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .quote {
+            font-style: italic;
+            font-size: 1.2em;
+            padding: 20px;
+            border-left: 3px solid #007bff;
+            margin: 30px 0;
+            background-color: #f9f9f9;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .extra-section {
+            margin: 40px 0;
+        }
+        .toggle-content {
+            display: none;
+            margin-top: 15px;
+        }
+        .toggle-heading {
+            cursor: pointer;
+        }
+        .active-section {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <div class="toolbar" id="toolbar">
+        <a href="#home">HOME</a>
+        <a href="#values">VALUES</a>
+        <a href="#events">EVENTS</a>
+        <a href="#community">COMMUNITY</a>
+        <a href="#association">ASSOCIATION</a>
+        <a href="#blog">BLOG</a>
+        <a href="#contact">CONTACT</a>
+    </div>
+
+   <!-- HOME SECTION -->
+<section id="home" class="section">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 15px; text-align: center;">
+        <h1 style="margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px;">
+  01- Welcome to Hackathon RACCOON
+  <img src="https://i.ibb.co/5ggM71vW/the-raccoon-3.png"  alt="Raccoon Logo" style="width: 26px; height: auto;">
+</h1>
+
+
+        
+  
+<div style="text-align: center; padding: 0;">
+  <h2 style="font-family: 'Merriweather', serif; font-style: italic; font-size: 6.5rem; line-height: 1.1; margin: 0; padding: 0; font-weight: 400;">
+    We're a community of<br>
+    experts specializing on
+  </h2>
+
+  <section class="values-section" aria-label="Our Core Values" style="background: white; text-align: center; padding: 0; margin-top: 1rem;">
+    <div class="values-carousel" style="max-width: 1000px; margin: 0 auto;">
+      <div class="carousel-container">
+        <!-- Value Card 1 -->
+        <div class="value-card active" tabindex="0" aria-current="true">
+          <div class="value-text">
+            <h3 class="value-heading" style="font-family: 'Merriweather', serif; font-style: italic; font-size: 6.5rem; line-height: 1.1; margin: 0; padding: 0; font-weight: 400;">Impactful Challenges</h3>
+          </div>
+        </div>
+
+        <!-- Value Card 2 -->
+        <div class="value-card" tabindex="0">
+          <div class="value-text">
+            <h3 class="value-heading" style="font-family: 'Merriweather', serif; font-style: italic; font-size: 6.5rem; line-height: 1.1; margin: 0; padding: 0; font-weight: 400;">Proven Fundraising</h3>
+          </div>
+        </div>
+
+        <!-- Value Card 3 -->
+        <div class="value-card" tabindex="0">
+          <div class="value-text">
+            <h3 class="value-heading" style="font-family: 'Merriweather', serif; font-style: italic; font-size: 6.5rem; line-height: 1.1; margin: 0; padding: 0; font-weight: 400;">Respectful Collaboration</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="carousel-dots" role="tablist" style="margin-top: 12px;">
+        <button class="dot active" data-index="0" role="tab" aria-label="Value 1: Impactful Challenges" aria-selected="true" style="width: 16px; height: 16px;"></button>
+        <button class="dot" data-index="1" role="tab" aria-label="Value 2: Proven Fundraising" style="width: 16px; height: 16px;"></button>
+        <button class="dot" data-index="2" role="tab" aria-label="Value 3: Respectful Collaboration" style="width: 16px; height: 16px;"></button>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.value-card');
+    const dots = document.querySelectorAll('.dot');
+    
+    dots.forEach(dot => {
+      dot.addEventListener('click', function() {
+        const index = this.getAttribute('data-index');
+        
+        // Update cards
+        cards.forEach(card => card.classList.remove('active'));
+        cards[index].classList.add('active');
+        
+        // Update dots
+        dots.forEach(d => {
+          d.classList.remove('active');
+          d.setAttribute('aria-selected', 'false');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+      });
+    });
+  });
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+    
+    .values-carousel {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .carousel-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 300%; /* 3 cards */
+    }
+    
+    .value-card {
+        width: 33.333%;
+        padding: 20px;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        position: absolute;
+    }
+    
+    .value-card.active {
+        opacity: 1;
+        position: relative;
+    }
+    
+    .carousel-dots {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    .dot.active {
+        background-color: #333;
+    }
+    
+    blockquote {
+        border-left: 4px solid #3498db;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.value-card');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        let interval;
+        
+        function showCard(index) {
+            // Hide all cards
+            cards.forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Deactivate all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show selected card
+            cards[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentIndex = index;
+        }
+        
+        function nextCard() {
+            const nextIndex = (currentIndex + 1) % cards.length;
+            showCard(nextIndex);
+        }
+        
+        // Initialize
+        showCard(0);
+        
+        // Auto-rotate every 5 seconds
+        interval = setInterval(nextCard, 5000);
+        
+        // Click handlers for dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(interval);
+                const index = parseInt(this.getAttribute('data-index'));
+                showCard(index);
+                // Restart auto-rotate
+                interval = setInterval(nextCard, 5000);
+            });
+        });
+        
+        // Pause on hover (optional)
+        const carousel = document.querySelector('.values-carousel');
+        carousel.addEventListener('mouseenter', () => clearInterval(interval));
+        carousel.addEventListener('mouseleave', () => {
+            interval = setInterval(nextCard, 5000);
+        });
+    });
+</script>
+           
+
+<!-- VALUES SECTION -->
+<section id="values" class="section">
+    <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">
+  02 - VALUES
+</h1>
+
+        <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.5rem; color: #2c3e50; margin-bottom: 30px;">Ideate. Program. Revolutionize.</h2>
+        <a href="#contact" class="btn" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">LEARN MORE</a>
+        <div class="values-accordion">
+            <!-- Value 1 -->
+            <div class="value-item">
+                <button class="value-header" onclick="toggleValue(this)">
+                    <div class="header-content">
+                        <i class="fas fa-bullseye" style="font-size: 1.5rem; margin-right: 15px; color: #3498db;"></i>
+                        <h3 style="margin: 0; font-family: 'Montserrat', sans-serif;">Impactful Challenges</h3>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="value-content">
+                    <p style="font-family: 'Merriweather', serif; line-height: 1.6;">We organize hackathons that make a real difference. They're a chance for people with various skills to come together, work hard, and create new solutions.</p>
+                    <ul style="text-align: left; display: inline-block; font-family: 'Merriweather', serif; padding-left: 20px;">
+                        <li>Community involvement</li>
+                        <li>Global impact</li>
+                        <li>Problem-solving focus</li>
+                        <li>Collective intelligence</li>
+                        <li>Tech-driven solutions</li>
+                        <li>Creative synergy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="value-item">
+                <button class="value-header" onclick="toggleValue(this)">
+                    <div class="header-content">
+                        <i class="fas fa-flask" style="font-size: 1.5rem; margin-right: 15px; color: #3498db;"></i>
+                        <h3 style="margin: 0; font-family: 'Montserrat', sans-serif;">Efficient Scientific Methods</h3>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="value-content">
+                    <p style="font-family: 'Merriweather', serif; line-height: 1.6;">We use strict scientific methods to tackle tough problems. This means our solutions really work because they're based on solid research.</p>
+                    <ul style="text-align: left; display: inline-block; font-family: 'Merriweather', serif; padding-left: 20px;">
+                        <li>Data-driven analysis</li>
+                        <li>Objective solutions</li>
+                        <li>Evidence-based research</li>
+                        <li>Peer-reviewed techniques</li>
+                        <li>Methodical approach</li>
+                        <li>Scalable results</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="value-item">
+                <button class="value-header" onclick="toggleValue(this)">
+                    <div class="header-content">
+                        <i class="fas fa-code" style="font-size: 1.5rem; margin-right: 15px; color: #3498db;"></i>
+                        <h3 style="margin: 0; font-family: 'Montserrat', sans-serif;">Top-Tier Software Development</h3>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="value-content">
+                    <p style="font-family: 'Merriweather', serif; line-height: 1.6;">We build software that matters. It's top-quality and important for society. We don't just create—we're making change.</p>
+                    <ul style="text-align: left; display: inline-block; font-family: 'Merriweather', serif; padding-left: 20px;">
+                        <li>Modern development stacks</li>
+                        <li>Dynamic solutions</li>
+                        <li>Quality-driven code</li>
+                        <li>Robust architectures</li>
+                        <li>Elite programmers</li>
+                        <li>User-focused design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="value-item">
+                <button class="value-header" onclick="toggleValue(this)">
+                    <div class="header-content">
+                        <i class="fas fa-hands-helping" style="font-size: 1.5rem; margin-right: 15px; color: #3498db;"></i>
+                        <h3 style="margin: 0; font-family: 'Montserrat', sans-serif;">Altruism-Centered Events</h3>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="value-content">
+                    <p style="font-family: 'Merriweather', serif; line-height: 1.6;">Our events are all about giving back. We're convinced that caring for others can change the world, especially when it's combined with new technology.</p>
+                    <ul style="text-align: left; display: inline-block; font-family: 'Merriweather', serif; padding-left: 20px;">
+                        <li>Giving back</li>
+                        <li>Positive change</li>
+                        <li>Empathy in action</li>
+                        <li>Shared humanity</li>
+                        <li>Pro bono work</li>
+                        <li>Empowerment</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Value 5 -->
+            <div class="value-item">
+                <button class="value-header" onclick="toggleValue(this)">
+                    <div class="header-content">
+                        <i class="fas fa-handshake" style="font-size: 1.5rem; margin-right: 15px; color: #3498db;"></i>
+                        <h3 style="margin: 0; font-family: 'Montserrat', sans-serif;">Respected Collaboration</h3>
+                    </div>
+                    <span class="toggle-icon">+</span>
+                </button>
+                <div class="value-content">
+                    <p style="font-family: 'Merriweather', serif; line-height: 1.6;">We work with the best. Our partnerships with top organizations and experts make a big difference. Together, we're committed to making things better.</p>
+                    <ul style="text-align: left; display: inline-block; font-family: 'Merriweather', serif; padding-left: 20px;">
+                        <li>Expert alliances</li>
+                        <li>Collaborative growth</li>
+                        <li>Network strength</li>
+                        <li>Mutual respect</li>
+                        <li>Cross-sector partnerships</li>
+                        <li>Visionary outcomes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+    
+    .values-accordion {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .value-item {
+        margin-bottom: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #f8f9fa;
+    }
+    
+    .value-header {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        transition: background-color 0.3s;
+    }
+    
+    .value-header:hover {
+        background-color: #e9ecef;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    .toggle-icon {
+        font-size: 1.5rem;
+        font-weight: bold;
+        transition: transform 0.3s;
+    }
+    
+    .value-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        padding: 0 20px;
+        background-color: white;
+    }
+    
+    .value-item.active .value-content {
+        max-height: 500px;
+        padding: 20px;
+    }
+    
+    .value-item.active .toggle-icon {
+        transform: rotate(45deg);
+    }
+    
+    .value-item.active .value-header {
+        background-color: #e9ecef;
+    }
+</style>
+
+<script>
+    function toggleValue(button) {
+        const valueItem = button.parentElement;
+        valueItem.classList.toggle('active');
+        
+        // Close other open items if needed
+        // document.querySelectorAll('.value-item').forEach(item => {
+        //     if (item !== valueItem && item.classList.contains('active')) {
+        //         item.classList.remove('active');
+        //     }
+        // });
+    }
+</script>
+
+<!-- LET'S TALK MARQUEE SECTION -->
+<section style="background-color: #ffffff; padding: 40px 0; overflow: hidden;">
+  <div class="marquee" style="display: flex; white-space: nowrap; animation: slide 20s linear infinite;">
+   <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest EventsT</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+  @keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee:hover {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .marquee span {
+      font-size: 3rem !important;
+    }
+  }
+</style>
+
+
+
+   <!-- EVENTS SECTION -->
+<!-- EVENTS SECTION -->
+<section id="events" class="section">
+  <div class="container">
+    <h1>03 - EVENTS</h1>
+
+    <!-- All 13 images, 2 per row -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0;">
+      <img src="https://i.ibb.co/gMvRPdtr/1.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 1">
+      <img src="https://i.ibb.co/8nfxMDQH/2.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 2">
+      <img src="https://i.ibb.co/9HLGKPZk/3.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 3">
+      <img src="https://i.ibb.co/8nQRmjnw/4.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 4">
+      <img src="https://i.ibb.co/Kcr4JRLx/5.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 5">
+      <img src="https://i.ibb.co/WTqwkh6/6.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 6">
+      <img src="https://i.ibb.co/g2SQrwR/7.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 7">
+      <img src="https://i.ibb.co/ds5nDBt4/8.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 8">
+      <img src="https://i.ibb.co/MkSYtf28/9.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 9">
+      <img src="https://i.ibb.co/Df0XVmXG/10.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 10">
+      <img src="https://i.ibb.co/4ggnYKHF/11.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 11">
+      <img src="https://i.ibb.co/B550KfCr/12.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 12">
+      <img src="https://i.ibb.co/4wnh9KN0/13.png" style="width: 48%; height: auto; border-radius: 10px;" alt="Event 13">
+    </div>
+  </div>
+</section>
+  
+  <!-- QUOTES CAROUSEL SECTION -->
+<section style="padding: 80px 0; background-color: #f8f9fa; overflow: hidden;">
+  <div class="quotes-container" style="width: 300%; display: flex; transition: transform 0.8s ease; transform: translateX(0);">
+    <!-- Quote 1 -->
+    <div class="quote-slide" style="width: 33.33%; padding: 0 5%; box-sizing: border-box; text-align: center;">
+      <blockquote style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; line-height: 1.4; color: #2c3e50; margin: 0;">
+        "Technology alone is not enough. It's technology married with liberal arts, married with the humanities, that yields us the result that makes our heart sing."
+      </blockquote>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-top: 20px; color: #7f8c8d;">
+        <strong>Steve Jobs</strong><br>
+        Co-founder of Apple Inc
+      </p>
+    </div>
+    
+    <!-- Quote 2 -->
+    <div class="quote-slide" style="width: 33.33%; padding: 0 5%; box-sizing: border-box; text-align: center;">
+      <blockquote style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; line-height: 1.4; color: #2c3e50; margin: 0;">
+        "Never doubt that a small group of thoughtful, committed citizens can change the world; indeed, it's the only thing that ever has."
+      </blockquote>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-top: 20px; color: #7f8c8d;">
+        <strong>Margaret Mead</strong><br>
+        American cultural anthropologist
+      </p>
+    </div>
+    
+    <!-- Quote 3 -->
+    <div class="quote-slide" style="width: 33.33%; padding: 0 5%; box-sizing: border-box; text-align: center;">
+      <blockquote style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; line-height: 1.4; color: #2c3e50; margin: 0;">
+        "Alone we can do so little; together we can do so much."
+      </blockquote>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; margin-top: 20px; color: #7f8c8d;">
+        <strong>Helen Keller</strong><br>
+        American author and political activist
+      </p>
+    </div>
+  </div>
+  
+  <!-- Navigation Dots -->
+  <div style="text-align: center; margin-top: 40px;">
+    <span class="quote-dot active" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #2c3e50; margin: 0 5px; cursor: pointer;"></span>
+    <span class="quote-dot" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #bdc3c7; margin: 0 5px; cursor: pointer;"></span>
+    <span class="quote-dot" style="display: inline-block; width: 12px; height: 12px; border-radius: 50%; background: #bdc3c7; margin: 0 5px; cursor: pointer;"></span>
+  </div>
+</section>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@400;600&display=swap');
+  
+  @media (max-width: 768px) {
+    .quote-slide blockquote {
+      font-size: 1.8rem !important;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.quotes-container');
+    const dots = document.querySelectorAll('.quote-dot');
+    let currentIndex = 0;
+    const totalSlides = 3;
+    let interval;
+    
+    function goToSlide(index) {
+      currentIndex = index;
+      container.style.transform = `translateX(-${currentIndex * 33.33}%)`;
+      
+      // Update dots
+      dots.forEach((dot, i) => {
+        dot.style.background = i === currentIndex ? '#2c3e50' : '#bdc3c7';
+      });
+    }
+    
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      goToSlide(currentIndex);
+    }
+    
+    // Auto-rotate every 3 seconds
+    interval = setInterval(nextSlide, 3000);
+    
+    // Click handlers for dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        clearInterval(interval);
+        goToSlide(index);
+        interval = setInterval(nextSlide, 3000);
+      });
+    });
+    
+    // Pause on hover
+    container.addEventListener('mouseenter', () => clearInterval(interval));
+    container.addEventListener('mouseleave', () => {
+      interval = setInterval(nextSlide, 3000);
+    });
+  });
+</script>
+  
+  <section style="padding: 40px 20px; background: #fdfdfd;">
+  <div class="horizontal-image-row" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <img src="https://i.ibb.co/xSqZz36b/Screenshot-2025-06-04-151314.png" alt="Screenshot 1" style="width: 30%; height: auto; border-radius: 10px;">
+    <img src="https://i.ibb.co/zHTQ2w5s/Screenshot-2025-06-04-151321.png" alt="Screenshot 2" style="width: 30%; height: auto; border-radius: 10px;">
+    <img src="https://i.ibb.co/Xk3t21pG/Screenshot-2025-06-04-151344.png" alt="Screenshot 3" style="width: 30%; height: auto; border-radius: 10px;">
+  </div>
+</section>
+
+
+
+
+
+            
+            
+            
+<!-- EVENT SECTION -->
+<section id="event" class="section">
+  <div class="container" style="display: flex; gap: 40px; max-width: 1200px; margin: 0 auto;">
+    <!-- Left Column -->
+    <div style="flex: 1; padding-right: 20px; border-right: 1px solid #e0e0e0;">
+      <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; color: black; margin-top: 0;">
+        Event Organization Driven by Decently Experienced Engineers
+      </h2>
+    </div>
+
+    <!-- Right Column -->
+    <div style="flex: 2;">
+      <p style="font-family: 'Merriweather', serif; line-height: 1.6; margin-top: 0; color: black;">
+        Imagine a hub where the world's top innovators converge to shape the future. Our community is a breeding ground for trailblazers who push boundaries and drive cutting-edge innovation. We're not just thinkers – we're doers who make a significant impact on a global scale.
+      </p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Collaborate with the Best</h3>
+      <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">
+        As a member of our community, you'll work alongside top-tier professionals from tech giants like Google, Microsoft, Amazon, Meta, NVIDIA, Tesla, and Zoom. Our community is a melting pot of brilliant minds, fostering revolutionary ideas and pioneering solutions.
+      </p>
+
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Be Prepared to Make a Difference</h3>
+      <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">
+        If you're considering joining us, be prepared to work hard and contribute to shaping the future. Our community is committed to excellence, and we invite you to join our ranks of recognized pioneers in their respective fields.
+      </p>
+
+      <div class="stats" style="color: black;">
+        <div class="stat-item">
+          <div class="stat-number" style="font-weight: bold;">25+</div>
+          <div>events</div>
+          <p>We manage events where inventiveness meets practicality, crafted to motivate and enthrall.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="font-weight: bold;">200+</div>
+          <div>projects</div>
+          <p>With over a hundred pioneering projects, our hackathons demonstrate the power of collaboration and sharp minds.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="font-weight: bold;">2000+</div>
+          <div>participants</div>
+          <p>Over a thousand innovators have contributed, each advancing our collective quest for progress.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" style="font-weight: bold;">25+</div>
+          <div>countries</div>
+          <p>We unite diverse minds from over 30 countries, fostering a cohesive movement for change.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <!-- VALUES MARQUEE SECTION -->
+<section style="padding: 60px 0; overflow: hidden; background: none;">
+    <div class="values-marquee" style="display: flex; white-space: nowrap;">
+        <!-- Marquee Group (repeated for seamless looping) -->
+        <div class="marquee-group" style="display: flex; animation: slide 25s linear infinite;">
+            <span class="marquee-item">Impactful Challenges</span>
+            <span class="marquee-item">Proven Fundraising</span>
+            <span class="marquee-item">Efficient Scientific Methods</span>
+            <span class="marquee-item">Top-Tier Software Development</span>
+            <span class="marquee-item">Altruism-Centered Events</span>
+            <span class="marquee-item">Respected Collaboration</span>
+        </div>
+        <div class="marquee-group" style="display: flex; animation: slide 25s linear infinite;" aria-hidden="true">
+            <span class="marquee-item">Impactful Challenges</span>
+            <span class="marquee-item">Proven Fundraising</span>
+            <span class="marquee-item">Efficient Scientific Methods</span>
+            <span class="marquee-item">Top-Tier Software Development</span>
+            <span class="marquee-item">Altruism-Centered Events</span>
+            <span class="marquee-item">Respected Collaboration</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    
+    .marquee-item {
+        font-family: 'Anton', sans-serif;
+        font-size: 4.5rem;
+        color: black;
+        margin: 0 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        white-space: nowrap;
+    }
+    
+    .values-marquee:hover .marquee-group {
+        animation-play-state: paused;
+    }
+    
+    @media (max-width: 768px) {
+        .marquee-item {
+            font-size: 2.5rem;
+            margin: 0 20px;
+        }
+    }
+</style>
+
+    <!-- COMMUNITY SECTION -->
+    <section id="community" class="section">
+        <div class="container">
+            <h1>04 - COMMUNITY</h1>
+            <p>Our community is built on the foundation of shared knowledge, mutual respect, and the relentless pursuit of innovation.</p>
+            
+            <div class="quote">
+                "Alone we can do so little; together we can do so much." - Helen Keller
+            </div>
+            
+            <h2>Why Join Our Community?</h2>
+            <ul>
+                <li>Access to exclusive hackathons and coding challenges</li>
+                <li>Networking opportunities with industry leaders</li>
+                <li>Mentorship from experienced professionals</li>
+                <li>Collaboration on meaningful projects</li>
+                <li>Skill development through workshops and training</li>
+            </ul>
+            
+            <h2>Testimonials</h2>
+            <div class="quote">
+                "Joining this community transformed my career. The connections I made and the projects I worked on opened doors I didn't even know existed." - Sarah, Software Engineer
+            </div>
+            
+            <div class="quote">
+                "The collaborative spirit here is unmatched. I've grown more in one year with this community than in five years on my own." - Michael, Data Scientist
+            </div>
+        </div>
+    </section>
+
+  <!-- ASSOCIATION SECTION -->
+<section id="association" class="section">
+  <div class="container" style="display: flex; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: flex-start;">
+    <!-- Left Column - Association Content -->
+    <div style="flex: 1;">
+      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 20px; color: black;">05 - ASSOCIATION</h1>
+      <h2 style="font-family: 'Montserrat', sans-serif; color: black;">Guild of Expert Engineers</h2>
+      
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Considering Fellowship?</h3>
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Want to join our community?</h3>
+      
+      <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">Being part of our fellowship program means you're recognized as a leading expert in your field. Our members undergo a rigorous review process, ensuring that our community maintains the highest standards of excellence.</p>
+      
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Discover Our Fellowship</h3>
+      <ul style="font-family: 'Merriweather', serif; line-height: 1.6; padding-left: 20px; color: black;">
+        <li>Small scale, big impact: Our community is a collective of dedicated professionals making significant strides in technology.</li>
+        <li>Personal touch: We foster robust exchanges and synergies, elevating each member's potential and crafting a future that bears our signature of technological advancement and seamless cooperation.</li>
+      </ul>
+      
+      <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Join our community of innovators</h3>
+      <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">If you're passionate about technology and want to make a real impact, consider joining our fellowship program. Our members are admired and recognized for their contributions, and we invite you to be part of our circle of excellence.</p>
+      
+      <a href="#contact" class="btn" style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-family: 'Montserrat', sans-serif; margin-top: 20px;">APPLY FOR FELLOWSHIP</a>
+    </div>
+    
+    <!-- Right Column - Image and Text -->
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+      <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; color: black; margin-top: 0;">SMALL SCALE — BIG IMPACT</h2>
+        <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">We are a community focused on making a real impact in the tech field, comparable to respected organizations, but with a personal touch. Our group is a collective of dedicated professionals who make significant strides in technology, earning admiration and recognition.</p>
+      </div>
+      
+      <img src="https://i.ibb.co/zwZHnqy/Screenshot-2025-06-04-152226.png" alt="Community Image" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      
+      <div style="background-color: #f8f9fa; padding: 30px; border-radius: 8px;">
+        <p style="font-family: 'Merriweather', serif; line-height: 1.6; margin: 0; color: black;">Our goal is to foster robust exchanges and synergies, elevating each member's potential and crafting a future that bears our signature of technological advancement and seamless cooperation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+    
+    .section {
+        padding: 60px 20px;
+    }
+    
+    .btn:hover {
+        background-color: #2980b9 !important;
+        transition: background-color 0.3s;
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column !important;
+        }
+        
+        .container > div {
+            flex: none !important;
+            width: 100% !important;
+        }
+    }
+</style>
+
+  
+  <!-- LET'S TALK MARQUEE SECTION -->
+<section style="background-color: #ffffff; padding: 40px 0; overflow: hidden;">
+  <div class="marquee" style="display: flex; white-space: nowrap; animation: slide 20s linear infinite;">
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+  </div>
+</section>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+    
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    
+    .marquee:hover {
+        animation-play-state: paused;
+    }
+    
+    @media (max-width: 768px) {
+        .marquee span {
+            font-size: 3rem !important;
+        }
+    }
+</style>
+   <!-- BLOG SECTION -->
+<section id="blog" class="section">
+  <div class="container">
+    <h1>BLOG</h1>
+    <h2>Latest Articles</h2>
+
+    <!-- Blog Article 1 -->
+    <div class="blog-card">
+      <img src="https://i.ibb.co/svzBpy83/download-44.jpg" alt="Collaborative Coding">
+      <div class="blog-content">
+        <h3>The Future of Collaborative Coding</h3>
+        <p>Exploring how hackathons are shaping the next generation of software development practices.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Blog Article 2 -->
+    <div class="blog-card">
+      <img src="https://i.ibb.co/5h9YkhVG/download-3.png" alt="Idea to Impact">
+      <div class="blog-content">
+        <h3>From Idea to Impact: The Hackathon Journey</h3>
+        <p>A behind-the-scenes look at how hackathon projects evolve into real-world solutions.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Blog Article 3 -->
+    <div class="blog-card">
+      <img src="https://i.ibb.co/60DNmBxD/download-45.jpg" alt="Inclusive Tech">
+      <div class="blog-content">
+        <h3>Building Inclusive Tech Communities</h3>
+        <p>Strategies for creating spaces where diverse voices can thrive and innovate.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Blog Article 4 -->
+    <div class="blog-card">
+      <img src="https://i.ibb.co/TqNQfgp8/download-4.png" alt="Problem Solving">
+      <div class="blog-content">
+        <h3>The Science Behind Effective Problem-Solving</h3>
+        <p>How structured methodologies lead to breakthrough solutions in hackathon settings.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+    <!-- Blog Article 5 -->
+    <div class="blog-card">
+      <img src="https://i.ibb.co/vC0GVymp/download-46.jpg" alt="Mentorship in Tech">
+      <div class="blog-content">
+        <h3>Mentorship in the Tech World</h3>
+        <p>The importance of guidance and knowledge sharing in accelerating professional growth.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- CONTACT SECTION -->
+<section id="contact" class="section">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div style="flex: 1; min-width: 300px; margin-right: 40px;">
+            <h1>CONTACT</h1>
+            <h2>Get in Touch</h2>
+            
+            <div style="margin-bottom: 30px;">
+                <h3>General Inquiries</h3>
+                <p>Email: info@hackathonraccoon.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                <h3>Partnership Opportunities</h3>
+                <p>Email: partnerships@hackathonraccoon.com</p>
+            </div>
+            
+            <div style="margin-bottom: 30px;">
+                <h3>Press Inquiries</h3>
+                <p>Email: press@hackathonraccoon.com</p>
+            </div>
+            
+            <div>
+                <h3>Follow Us</h3>
+                <p>Twitter: @HackathonRaccoon</p>
+                <p>LinkedIn: Hackathon Raccoon</p>
+                <p>GitHub: HackathonRaccoon</p>
+            </div>
+        </div>
+        
+        <div style="flex: 1; min-width: 300px;">
+            <h3>Send Us a Message</h3>
+            <form style="display: flex; flex-direction: column;">
+                <div style="margin-bottom: 15px;">
+                    <label for="name" style="display: block; margin-bottom: 5px;">Name</label>
+                    <input type="text" id="name" name="name" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="email" style="display: block; margin-bottom: 5px;">Email</label>
+                    <input type="email" id="email" name="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="subject" style="display: block; margin-bottom: 5px;">Subject</label>
+                    <select id="subject" name="subject" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="general">General Inquiry</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="press">Press Inquiry</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div style="margin-bottom: 15px;">
+                    <label for="message" style="display: block; margin-bottom: 5px;">Message</label>
+                    <textarea id="message" name="message" rows="5" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                
+                <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" class="toggle-principles">Leadership Principles</a>
+                <a href="#">Sponsorship Brochure</a>
+                <a href="#association">Discover Fellowship</a>
+                <a href="#">Our Fellows</a>
+                <a href="#blog">Blog</a>
+            </div>
+            
+            <div class="extra-section">
+                <h3 class="toggle-heading">Leadership Principles</h3>
+                <p class="toggle-subheading">Our Guiding Principles</p>
+                <div class="toggle-content">
+                    <p>At Hackathon Raptors, we're driven by a set of core principles that shape our decisions and actions.</p>
+                    <ul>
+                        <li>Foresight with Flexibility</li>
+                        <li>Transparent Integrity</li>
+                        <li>Collaborative Strength</li>
+                        <li>Altruistic Impact</li>
+                        <li>Respectful Mentorship</li>
+                        <li>Promote Inclusivity</li>
+                        <li>Excellence in Execution</li>
+                        <li>Responsible Stewardship</li>
+                        <li>Visionary Leadership</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>© 2023 Hackathon Raccoon. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Update active link in toolbar
+                const links = document.querySelectorAll('#toolbar a');
+                links.forEach(link => {
+                    link.style.color = '#333';
+                });
+                this.style.color = '#007bff';
+            });
+        });
+
+        // Toggle content visibility
+        document.querySelectorAll('.toggle-heading').forEach(heading => {
+            heading.addEventListener('click', function() {
+                const content = this.nextElementSibling.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Highlight current section in view
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const id = section.getAttribute('id');
+                    const correspondingLink = document.querySelector(`#toolbar a[href="#${id}"]`);
+                    
+                    document.querySelectorAll('#toolbar a').forEach(link => {
+                        link.style.color = '#333';
+                    });
+                    
+                    if (correspondingLink) {
+                        correspondingLink.style.color = '#007bff';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
