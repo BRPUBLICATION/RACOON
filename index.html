@@ -133,15 +133,18 @@
     </style>
 </head>
 <body>
-    <div class="toolbar" id="toolbar">
-        <a href="#home">HOME</a>
-        <a href="#values">VALUES</a>
-        <a href="#events">EVENTS</a>
-        <a href="#community">COMMUNITY</a>
-        <a href="#association">ASSOCIATION</a>
-        <a href="#blog">BLOG</a>
-        <a href="#contact">CONTACT</a>
-    </div>
+<div class="toolbar" id="toolbar" style="background-color: #f0f0f0; padding: 10px; text-align: center;">
+  <a href="#home" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">HOME</a>
+  <a href="#values" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">VALUES</a>
+  <a href="#events" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">EVENTS</a>
+  <a href="#community" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">COMMUNITY</a>
+  <a href="#association" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">ASSOCIATION</a>
+  <a href="#blog" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">BLOG</a>
+  <a href="#contact" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">CONTACT</a>
+</div>
+
+
+
 
    <!-- HOME SECTION -->
 <section id="home" class="section">
@@ -345,7 +348,8 @@
                 02 - VALUES
             </h1>
             <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 1.5rem; color: #2c3e50; margin-bottom: 30px;">Ideate. Program. Revolutionize.</h2>
-            <a href="#contact" class="btn" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">LEARN MORE</a>
+           <a href="#contact" class="btn" style="display: inline-block; padding: 10px 20px; background-color: #000000; color: white; text-decoration: none; border-radius: 5px; margin-bottom: 40px; font-family: 'Montserrat', sans-serif;">LEARN MORE</a>
+
         </div>
         
         <!-- Right side -->
@@ -544,14 +548,13 @@
     }
 </script>
 
-<!-- LET'S TALK MARQUEE SECTION -->
 <section style="background-color: #ffffff; padding: 40px 0; overflow: hidden;">
   <div class="marquee" style="display: flex; white-space: nowrap; animation: slide 20s linear infinite;">
-   <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest EventsT</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">Latest Events</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">latest events</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">latest events</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">latest events</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">latest events</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">latest events</span>
   </div>
 </section>
 
@@ -571,6 +574,12 @@
     .marquee span {
       font-size: 3rem !important;
     }
+  }
+
+  /* Force lowercase for Bebas Neue */
+  .marquee span {
+    font-variant: normal !important;
+    text-transform: lowercase !important;
   }
 </style>
 
@@ -740,56 +749,54 @@
         If you're considering joining us, be prepared to work hard and contribute to shaping the future. Our community is committed to excellence, and we invite you to join our ranks of recognized pioneers in their respective fields.
       </p>
 
-      <div class="stats" style="color: black;">
-        <div class="stat-item">
-          <div class="stat-number" style="font-weight: bold;">25+</div>
-          <div>events</div>
-          <p>We manage events where inventiveness meets practicality, crafted to motivate and enthrall.</p>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" style="font-weight: bold;">200+</div>
-          <div>projects</div>
-          <p>With over a hundred pioneering projects, our hackathons demonstrate the power of collaboration and sharp minds.</p>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" style="font-weight: bold;">2000+</div>
-          <div>participants</div>
-          <p>Over a thousand innovators have contributed, each advancing our collective quest for progress.</p>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" style="font-weight: bold;">25+</div>
-          <div>countries</div>
-          <p>We unite diverse minds from over 30 countries, fostering a cohesive movement for change.</p>
-        </div>
-      </div>
-    </div>
+     <div class="stats" style="color: black;">
+  <div class="stat-item">
+    <div class="stat-number" style="font-weight: bold; color: black;">25+</div>
+    <div>events</div>
+    <p>We manage events where inventiveness meets practicality, crafted to motivate and enthrall.</p>
   </div>
+  <div class="stat-item">
+    <div class="stat-number" style="font-weight: bold; color: black;">200+</div>
+    <div>projects</div>
+    <p>With over a hundred pioneering projects, our hackathons demonstrate the power of collaboration and sharp minds.</p>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" style="font-weight: bold; color: black;">2000+</div>
+    <div>participants</div>
+    <p>Over a thousand innovators have contributed, each advancing our collective quest for progress.</p>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" style="font-weight: bold; color: black;">25+</div>
+    <div>countries</div>
+    <p>We unite diverse minds from over 30 countries, fostering a cohesive movement for change.</p>
+  </div>
+</div>
+
 </section>
 
   
-  <!-- VALUES MARQUEE SECTION -->
+
 <section style="padding: 60px 0; overflow: hidden; background: none;">
     <div class="values-marquee" style="display: flex; white-space: nowrap;">
         <!-- Marquee Group (repeated for seamless looping) -->
         <div class="marquee-group" style="display: flex; animation: slide 25s linear infinite;">
-            <span class="marquee-item">Impactful Challenges</span>
-            <span class="marquee-item">Proven Fundraising</span>
-            <span class="marquee-item">Efficient Scientific Methods</span>
-            <span class="marquee-item">Top-Tier Software Development</span>
-            <span class="marquee-item">Altruism-Centered Events</span>
-            <span class="marquee-item">Respected Collaboration</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Impactful Challenges</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Proven Fundraising</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Efficient Scientific Methods</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Top-Tier Software Development</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Altruism-Centered Events</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Respected Collaboration</span>
         </div>
         <div class="marquee-group" style="display: flex; animation: slide 25s linear infinite;" aria-hidden="true">
-            <span class="marquee-item">Impactful Challenges</span>
-            <span class="marquee-item">Proven Fundraising</span>
-            <span class="marquee-item">Efficient Scientific Methods</span>
-            <span class="marquee-item">Top-Tier Software Development</span>
-            <span class="marquee-item">Altruism-Centered Events</span>
-            <span class="marquee-item">Respected Collaboration</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Impactful Challenges</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Proven Fundraising</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Efficient Scientific Methods</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Top-Tier Software Development</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Altruism-Centered Events</span>
+            <span class="marquee-item" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; color: #555; margin-right: 80px; font-weight: 400; opacity: 0.8;">Respected Collaboration</span>
         </div>
     </div>
 </section>
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
     
@@ -821,42 +828,53 @@
     }
 </style>
 
-    <!-- COMMUNITY SECTION -->
-    <section id="community" class="section">
-        <div class="container">
-            <h1>04 - COMMUNITY</h1>
-            <p>Our community is built on the foundation of shared knowledge, mutual respect, and the relentless pursuit of innovation.</p>
+  <!-- COMMUNITY SECTION -->
+<section id="community" class="section" style="background-color: #f9f9f9; padding: 80px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 60px;">
+        <!-- Left Content -->
+        <div style="flex: 1;">
+           <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; color: black; margin-bottom: 15px; letter-spacing: 1px;">
+  04 - COMMUNITY
+</h1>
+
+            <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 2rem; color: #2c3e50; margin-bottom: 25px;">
+                Our community is built on the foundation of shared knowledge, mutual respect, and the relentless pursuit of innovation.
+            </h2>
             
-            <div class="quote">
+            <div class="quote" style="font-family: 'Merriweather', serif; font-style: italic; font-size: 1.1rem; color: #555; margin: 30px 0; padding-left: 20px; border-left: 3px solid #3498db;">
                 "Alone we can do so little; together we can do so much." - Helen Keller
             </div>
             
-            <h2>Why Join Our Community?</h2>
-            <ul>
-                <li>Access to exclusive hackathons and coding challenges</li>
-                <li>Networking opportunities with industry leaders</li>
-                <li>Mentorship from experienced professionals</li>
-                <li>Collaboration on meaningful projects</li>
-                <li>Skill development through workshops and training</li>
+            <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.5rem; color: #2c3e50; margin: 30px 0 20px;">
+                Why Join Our Community?
+            </h3>
+            <ul style="font-family: 'Merriweather', serif; line-height: 1.8; color: #555; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Access to exclusive hackathons and coding challenges</li>
+                <li style="margin-bottom: 10px;">Networking opportunities with industry leaders</li>
+                <li style="margin-bottom: 10px;">Mentorship from experienced professionals</li>
+                <li style="margin-bottom: 10px;">Collaboration on meaningful projects</li>
+                <li style="margin-bottom: 10px;">Skill development through workshops and training</li>
             </ul>
-            
-            <h2>Testimonials</h2>
-            <div class="quote">
-                "Joining this community transformed my career. The connections I made and the projects I worked on opened doors I didn't even know existed." - Sarah, Software Engineer
-            </div>
-            
-            <div class="quote">
-                "The collaborative spirit here is unmatched. I've grown more in one year with this community than in five years on my own." - Michael, Data Scientist
-            </div>
         </div>
-    </section>
+        
+        <!-- Right Image -->
+        <div style="flex: 1; text-align: center;">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Community of developers collaborating" 
+                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
 
   <!-- ASSOCIATION SECTION -->
 <section id="association" class="section">
   <div class="container" style="display: flex; gap: 40px; max-width: 1200px; margin: 0 auto; align-items: flex-start;">
     <!-- Left Column - Association Content -->
     <div style="flex: 1;">
-      <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 20px; color: black;">05 - ASSOCIATION</h1>
+     <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; color: black;">
+  05 - ASSOCIATION
+</h1>
+
       <h2 style="font-family: 'Montserrat', sans-serif; color: black;">Guild of Expert Engineers</h2>
       
       <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Considering Fellowship?</h3>
@@ -873,7 +891,8 @@
       <h3 style="font-family: 'Montserrat', sans-serif; color: black;">Join our community of innovators</h3>
       <p style="font-family: 'Merriweather', serif; line-height: 1.6; color: black;">If you're passionate about technology and want to make a real impact, consider joining our fellowship program. Our members are admired and recognized for their contributions, and we invite you to be part of our circle of excellence.</p>
       
-      <a href="#contact" class="btn" style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-family: 'Montserrat', sans-serif; margin-top: 20px;">APPLY FOR FELLOWSHIP</a>
+     <a href="#contact" class="btn" style="display: inline-block; padding: 12px 24px; background-color: #000000; color: white; text-decoration: none; border-radius: 5px; font-family: 'Montserrat', sans-serif; margin-top: 20px;">APPLY FOR FELLOWSHIP</a>
+
     </div>
     
     <!-- Right Column - Image and Text -->
@@ -920,115 +939,101 @@
   <!-- LET'S TALK MARQUEE SECTION -->
 <section style="background-color: #ffffff; padding: 40px 0; overflow: hidden;">
   <div class="marquee" style="display: flex; white-space: nowrap; animation: slide 20s linear infinite;">
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
-    <span style="font-family: 'Bebas Neue', cursive; font-size: 5rem; color: black; margin-right: 50px;">LET'S TALK</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">let's talk</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">let's talk</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">let's talk</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">let's talk</span>
+    <span style="font-family: 'Montserrat', sans-serif; font-size: 5rem; color: black; margin-right: 50px; text-transform: lowercase; font-weight: 700;">let's talk</span>
+  </div>
+</section
+
+
+  <!-- BLOG SECTION -->
+<section id="blog" class="section" style="padding: 60px 0; background-color: #f9f9f9;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; color: black; margin-bottom: 15px; letter-spacing: 1px;">06 - BLOG</h1>
+    <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 2rem; color: #2c3e50; margin-bottom: 40px;">Latest Articles</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+      <!-- Blog Article 1 -->
+      <div class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="https://i.ibb.co/svzBpy83/download-44.jpg" alt="Collaborative Coding" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="blog-content" style="padding: 20px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px;">The Future of Collaborative Coding</h3>
+          <p style="font-family: 'Merriweather', serif; color: #555; margin-bottom: 20px; line-height: 1.5;">Exploring how hackathons are shaping the next generation of software development practices.</p>
+          <a href="#" style="display: inline-block; padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Article 2 -->
+      <div class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="https://i.ibb.co/5h9YkhVG/download-3.png" alt="Idea to Impact" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="blog-content" style="padding: 20px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px;">From Idea to Impact: The Hackathon Journey</h3>
+          <p style="font-family: 'Merriweather', serif; color: #555; margin-bottom: 20px; line-height: 1.5;">A behind-the-scenes look at how hackathon projects evolve into real-world solutions.</p>
+          <a href="#" style="display: inline-block; padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Article 3 -->
+      <div class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="https://i.ibb.co/60DNmBxD/download-45.jpg" alt="Inclusive Tech" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="blog-content" style="padding: 20px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px;">Building Inclusive Tech Communities</h3>
+          <p style="font-family: 'Merriweather', serif; color: #555; margin-bottom: 20px; line-height: 1.5;">Strategies for creating spaces where diverse voices can thrive and innovate.</p>
+          <a href="#" style="display: inline-block; padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Article 4 -->
+      <div class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="https://i.ibb.co/TqNQfgp8/download-4.png" alt="Problem Solving" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="blog-content" style="padding: 20px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px;">The Science Behind Effective Problem-Solving</h3>
+          <p style="font-family: 'Merriweather', serif; color: #555; margin-bottom: 20px; line-height: 1.5;">How structured methodologies lead to breakthrough solutions in hackathon settings.</p>
+          <a href="#" style="display: inline-block; padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Read more →</a>
+        </div>
+      </div>
+
+      <!-- Blog Article 5 -->
+      <div class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <img src="https://i.ibb.co/vC0GVymp/download-46.jpg" alt="Mentorship in Tech" style="width: 100%; height: 200px; object-fit: cover;">
+        <div class="blog-content" style="padding: 20px;">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-bottom: 10px;">Mentorship in the Tech World</h3>
+          <p style="font-family: 'Merriweather', serif; color: #555; margin-bottom: 20px; line-height: 1.5;">The importance of guidance and knowledge sharing in accelerating professional growth.</p>
+          <a href="#" style="display: inline-block; padding: 10px 20px; background: black; color: white; text-decoration: none; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 500;">Read more →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
-    
-    @keyframes slide {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+  @media (max-width: 768px) {
+    .blog-card {
+      margin-bottom: 30px;
     }
-    
-    .marquee:hover {
-        animation-play-state: paused;
-    }
-    
-    @media (max-width: 768px) {
-        .marquee span {
-            font-size: 3rem !important;
-        }
-    }
+  }
 </style>
-   <!-- BLOG SECTION -->
-<section id="blog" class="section">
-  <div class="container">
-    <h1>BLOG</h1>
-    <h2>Latest Articles</h2>
-
-    <!-- Blog Article 1 -->
-    <div class="blog-card">
-      <img src="https://i.ibb.co/svzBpy83/download-44.jpg" alt="Collaborative Coding">
-      <div class="blog-content">
-        <h3>The Future of Collaborative Coding</h3>
-        <p>Exploring how hackathons are shaping the next generation of software development practices.</p>
-        <a href="#">Read more →</a>
-      </div>
-    </div>
-
-    <!-- Blog Article 2 -->
-    <div class="blog-card">
-      <img src="https://i.ibb.co/5h9YkhVG/download-3.png" alt="Idea to Impact">
-      <div class="blog-content">
-        <h3>From Idea to Impact: The Hackathon Journey</h3>
-        <p>A behind-the-scenes look at how hackathon projects evolve into real-world solutions.</p>
-        <a href="#">Read more →</a>
-      </div>
-    </div>
-
-    <!-- Blog Article 3 -->
-    <div class="blog-card">
-      <img src="https://i.ibb.co/60DNmBxD/download-45.jpg" alt="Inclusive Tech">
-      <div class="blog-content">
-        <h3>Building Inclusive Tech Communities</h3>
-        <p>Strategies for creating spaces where diverse voices can thrive and innovate.</p>
-        <a href="#">Read more →</a>
-      </div>
-    </div>
-
-    <!-- Blog Article 4 -->
-    <div class="blog-card">
-      <img src="https://i.ibb.co/TqNQfgp8/download-4.png" alt="Problem Solving">
-      <div class="blog-content">
-        <h3>The Science Behind Effective Problem-Solving</h3>
-        <p>How structured methodologies lead to breakthrough solutions in hackathon settings.</p>
-        <a href="#">Read more →</a>
-      </div>
-    </div>
-
-    <!-- Blog Article 5 -->
-    <div class="blog-card">
-      <img src="https://i.ibb.co/vC0GVymp/download-46.jpg" alt="Mentorship in Tech">
-      <div class="blog-content">
-        <h3>Mentorship in the Tech World</h3>
-        <p>The importance of guidance and knowledge sharing in accelerating professional growth.</p>
-        <a href="#">Read more →</a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 
     <!-- CONTACT SECTION -->
 <section id="contact" class="section">
     <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
         <div style="flex: 1; min-width: 300px; margin-right: 40px;">
             <h1>CONTACT</h1>
-            <h2>Get in Touch</h2>
+<h2>Get in Touch</h2>
+
+<div style="margin-bottom: 30px;">
+  <h3>General Inquiries</h3>
+  <p>Email: info@hackathonraccoon.com</p>
+  <p>Address: Strada Uzinei Electrice, Cluj-Napoca 400375, Romania</p>
+</div>
+
             
-            <div style="margin-bottom: 30px;">
-                <h3>General Inquiries</h3>
-                <p>Email: info@hackathonraccoon.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-            </div>
             
-            <div style="margin-bottom: 30px;">
-                <h3>Partnership Opportunities</h3>
-                <p>Email: partnerships@hackathonraccoon.com</p>
-            </div>
             
-            <div style="margin-bottom: 30px;">
-                <h3>Press Inquiries</h3>
-                <p>Email: press@hackathonraccoon.com</p>
-            </div>
             
             <div>
                 <h3>Follow Us</h3>
@@ -1075,33 +1080,10 @@
     <div class="footer">
         <div class="container">
             <div class="footer-links">
-                <a href="#" class="toggle-principles">Leadership Principles</a>
-                <a href="#">Sponsorship Brochure</a>
-                <a href="#association">Discover Fellowship</a>
-                <a href="#">Our Fellows</a>
-                <a href="#blog">Blog</a>
-            </div>
+               
             
-            <div class="extra-section">
-                <h3 class="toggle-heading">Leadership Principles</h3>
-                <p class="toggle-subheading">Our Guiding Principles</p>
-                <div class="toggle-content">
-                    <p>At Hackathon Raptors, we're driven by a set of core principles that shape our decisions and actions.</p>
-                    <ul>
-                        <li>Foresight with Flexibility</li>
-                        <li>Transparent Integrity</li>
-                        <li>Collaborative Strength</li>
-                        <li>Altruistic Impact</li>
-                        <li>Respectful Mentorship</li>
-                        <li>Promote Inclusivity</li>
-                        <li>Excellence in Execution</li>
-                        <li>Responsible Stewardship</li>
-                        <li>Visionary Leadership</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <p>© 2023 Hackathon Raccoon. All rights reserved.</p>
+            <p style="color: #000000;">© 2023 Hackathon Raccoon. All rights reserved.</p>
+
         </div>
     </div>
 
