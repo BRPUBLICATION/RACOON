@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Hackathon Raccoon</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        .toolbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .toolbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+        .toolbar a:hover {
+            color: #007bff;
+        }
+        .section {
+            padding: 60px 20px;
+            min-height: 100vh;
+            border-bottom: 1px solid #eee;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #222;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .footer-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Event Detail Specific Styles */
+        .event-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .back-button {
+            margin-right: 20px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: #333;
+        }
+        .event-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .event-meta {
+            display: flex;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .event-meta-item {
+            margin-right: 30px;
+            padding-right: 30px;
+            border-right: 1px solid #eee;
+        }
+        .event-meta-item:last-child {
+            border-right: none;
+        }
+        .event-meta-label {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .event-meta-value {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .event-description {
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            white-space: pre-line; /* This preserves line breaks and formatting */
+        }
+        .comment-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+        .comment-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: 'Merriweather', serif;
+            resize: vertical;
+            min-height: 150px;
+        }
+        .comments-list {
+            margin-top: 40px;
+        }
+        .comment {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .comment-author {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .comment-date {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .comment-content {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="toolbar" id="toolbar" style="background-color: #f0f0f0; padding: 10px; text-align: center;">
+  <a href="index.html#home" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">HOME</a>
+  <a href="index.html#values" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">VALUES</a>
+  <a href="index.html#events" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">EVENTS</a>
+  <a href="index.html#community" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">COMMUNITY</a>
+  <a href="index.html#association" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">ASSOCIATION</a>
+  <a href="index.html#blog" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">BLOG</a>
+  <a href="index.html#contact" style="color: #111; font-weight: 600; margin: 0 10px; text-decoration: none;">CONTACT</a>
+</div>
+
+<section class="section">
+    <div class="container">
+        <div class="event-header">
+            <a href="index.html#events" class="back-button">←</a>
+            <h1 id="event-title" style="font-family: 'Montserrat', sans-serif; font-weight: 700;">Event Details</h1>
+        </div>
+
+        <img id="event-image" src="" alt="Event" class="event-image">
+
+        <div class="event-meta">
+            <div class="event-meta-item">
+                <div class="event-meta-label">Date</div>
+                <div class="event-meta-value" id="event-date">Loading...</div>
+            </div>
+            <div class="event-meta-item">
+                <div class="event-meta-label">Location</div>
+                <div class="event-meta-value" id="event-location">Loading...</div>
+            </div>
+            <div class="event-meta-item">
+                <div class="event-meta-label">Participants</div>
+                <div class="event-meta-value" id="event-participants">Loading...</div>
+            </div>
+        </div>
+
+        <div class="event-description" id="event-description">
+            Loading event details...
+        </div>
+
+        <div class="comment-section">
+            <h2 style="font-family: 'Montserrat', sans-serif;">Comments</h2>
+
+            <div class="comment-form">
+                <h3 style="font-family: 'Montserrat', sans-serif;">Add a Comment</h3>
+                <form id="comment-form">
+                    <div style="margin-bottom: 15px;">
+                        <label for="name" style="display: block; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Name</label>
+                        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="email" style="display: block; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Email</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-bottom: 15px;">
+                        <label for="comment" style="display: block; margin-bottom: 5px; font-family: 'Montserrat', sans-serif;">Your Comment</label>
+                        <textarea id="comment" name="comment" placeholder="Share your thoughts about this event..."></textarea>
+                    </div>
+
+                    <button type="submit" style="background-color: black; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-family: 'Montserrat', sans-serif;">Post Comment</button>
+                </form>
+            </div>
+
+            <div class="comments-list" id="comments-list">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-links">
+            <a href="/leadership-principle">Leadership Principle</a>
+            <a href="/sponsorship-brochure">Sponsorship Brochure</a>
+            <a href="/discoverfellowship">DiscoverFellowship</a>
+            <a href="/our-fellow">Our Fellow</a>
+            <a href="/blog">Blog</a>
+        </div>
+        <p style="color: #000000; text-align: center; margin-top: 20px;">© 2023 Hackathon Raccoon. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get event ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventId = urlParams.get('id');
+
+        if (!eventId) {
+            window.location.href = 'index.html#events';
+            return;
+        }
+
+        // Event data (in a real application, this would come from a database or API)
+        const eventData = {
+            1: {
+                title: "ROBOT WARS: 2023 - Battle for Supremacy",
+                image: "https://i.ibb.co/gMvRPdtr/1.png",
+                date: "March 15-17, 2023",
+                location: "San Francisco, CA",
+                participants: "250+",
+                description: `Get ready for the ultimate robotics competition where teams will design, build, and battle their robots in an arena. ROBOT WARS is a thrilling event that showcases innovation, creativity, and technical expertise in robotics.
+
+OBJECTIVE
+To identify the most skilled robotics teams who can design and build robots that can outperform others in battle, demonstrating exceptional mechanical design, control systems, and strategy.
+
+COMPETITION FORMAT
+1. Design and Build: Teams will design and build their robots within a specified timeframe.
+2. Battle Rounds: Robots will compete in one-on-one battles in an arena, with the winner advancing to the next round.
+
+CHALLENGES
+1. Robot Design: Design and build a robot that can withstand impacts and deliver effective attacks.
+2. Control Systems: Develop control systems that enable precise robot movement and action.
+3. Strategy: Develop a winning strategy to outmaneuver opponents.
+
+JUDGING CRITERIA
+1. Robot Performance: Effectiveness in battle, including damage dealt and defense.
+2. Design and Build Quality: Quality of robot design, build, and craftsmanship.
+3. Strategy and Teamwork: Ability to work together as a team and adapt strategy during battles.
+
+PRIZES
+1. Cash Awards: For the winning team that demonstrates exceptional robotics skills.
+2. Robotics Kits: Prizes include robotics kits and components for future projects.
+3. Mentorship: Opportunities for mentorship from experienced robotics, industry experts, and game developers.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for robotics, engineering, and gaming.
+
+Get ready to build and battle your robots! Join the ROBOT WARS competition and showcase your skills in robotics and innovation.`
+
+            },
+            2: {
+                title: "ROBOT WARS: 2024 - Battle for Supremacy",
+                image: "https://i.ibb.co/8nfxMDQH/2.png",
+                date: "March 20-22, 2024",
+                location: "Los Angeles, CA",
+                participants: "300+",
+                description: `Get ready for the ultimate robotics competition where teams will design, build, and battle their robots in an arena. ROBOT WARS is a thrilling event that showcases innovation, creativity, and technical expertise in robotics.
+
+OBJECTIVE
+To identify the most skilled robotics teams who can design and build robots that can outperform others in battle, demonstrating exceptional mechanical design, control systems, and strategy.
+
+COMPETITION FORMAT
+1. Design and Build: Teams will design and build their robots within a specified timeframe.
+2. Battle Rounds: Robots will compete in one-on-one battles in an arena, with the winner advancing to the next round.
+
+CHALLENGES
+1. Robot Design: Design and build a robot that can withstand impacts and deliver effective attacks.
+2. Control Systems: Develop control systems that enable precise robot movement and action.
+3. Strategy: Develop a winning strategy to outmaneuver opponents.
+
+JUDGING CRITERIA
+1. Robot Performance: Effectiveness in battle, including damage dealt and defense.
+2. Design and Build Quality: Quality of robot design, build, and craftsmanship.
+3. Strategy and Teamwork: Ability to work together as a team and adapt strategy during battles.
+
+PRIZES
+1. Cash Awards: For the winning team that demonstrates exceptional robotics skills.
+2. Robotics Kits: Prizes include robotics kits and components for future projects.
+3. Mentorship: Opportunities for mentorship from experienced robotics, industry experts, and game developers.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for robotics, engineering, and gaming.
+
+Get ready to build and battle your robots! Join the ROBOT WARS competition and showcase your skills in robotics and innovation.`
+
+            },
+            3: {
+                title: "ROBOT WARS: 2025 - Battle for Supremacy",
+                image: "https://i.ibb.co/9HLGKPZk/3.png",
+                date: "March 18-20, 2025",
+                location: "Chicago, IL",
+                participants: "350+",
+                description: `Get ready for the ultimate robotics competition where teams will design, build, and battle their robots in an arena. ROBOT WARS is a thrilling event that showcases innovation, creativity, and technical expertise in robotics.
+
+OBJECTIVE
+To identify the most skilled robotics teams who can design and build robots that can outperform others in battle, demonstrating exceptional mechanical design, control systems, and strategy.
+
+COMPETITION FORMAT
+1. Design and Build: Teams will design and build their robots within a specified timeframe.
+2. Battle Rounds: Robots will compete in one-on-one battles in an arena, with the winner advancing to the next round.
+
+CHALLENGES
+1. Robot Design: Design and build a robot that can withstand impacts and deliver effective attacks.
+2. Control Systems: Develop control systems that enable precise robot movement and action.
+3. Strategy: Develop a winning strategy to outmaneuver opponents.
+
+JUDGING CRITERIA
+1. Robot Performance: Effectiveness in battle, including damage dealt and defense.
+2. Design and Build Quality: Quality of robot design, build, and craftsmanship.
+3. Strategy and Teamwork: Ability to work together as a team and adapt strategy during battles.
+
+PRIZES
+1. Cash Awards: For the winning team that demonstrates exceptional robotics skills.
+2. Robotics Kits: Prizes include robotics kits and components for future projects.
+3. Mentorship: Opportunities for mentorship from experienced robotics, industry experts, and game developers.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for robotics, engineering, and gaming.
+
+Get ready to build and battle your robots! Join the ROBOT WARS competition and showcase your skills in robotics and innovation.`
+
+            },
+            4: {
+                title: "Cyber Hack Challenge 2023: Test Your Skills",
+                image: "https://i.ibb.co/8nQRmjnw/4.png",
+                date: "June 15-17, 2023",
+                location: "Austin, TX",
+                participants: "200+",
+                description: `The Cyber Hack Challenge is a thrilling competition that puts your cybersecurity skills to the test. Participants will face real-world hacking scenarios, identifying vulnerabilities and developing creative solutions to protect against cyber threats.
+
+OBJECTIVE
+To identify talented individuals who can think like hackers and develop effective cybersecurity solutions to protect against evolving threats.
+
+COMPETITION FORMAT
+1. Online Round: Participants will complete a series of cybersecurity challenges, including penetration testing, vulnerability assessment, and incident response.
+2. On-Site Finals: Top performers will participate in a live hacking competition, where they'll have to identify and exploit vulnerabilities in a simulated environment.
+
+CHALLENGES
+1. Web Application Security: Identify and exploit vulnerabilities in web applications.
+2. Network Security: Conduct penetration testing and vulnerability assessment on network systems.
+3. Cryptography: Develop creative solutions to cryptographic challenges.
+
+JUDGING CRITERIA
+1. Technical Skills: Ability to identify and exploit vulnerabilities.
+2. Creativity: Originality and effectiveness of solutions.
+3. Speed: Time taken to complete challenges.
+
+PRIZES
+1. Cash Awards: For top performers who demonstrate exceptional cybersecurity skills.
+2. Internships: Opportunities with leading cybersecurity companies, providing hands-on experience and industry exposure.
+3. Certifications: Industry-recognized certifications, such as CompTIA Security+ or CEH.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for cybersecurity and hacking.
+
+Get ready to test your skills and take your cybersecurity expertise to the next level!`
+
+            },
+            5: {
+                title: "Cyber Hack Challenge 2024: Test Your Skills",
+                image: "https://i.ibb.co/Kcr4JRLx/5.png",
+                date: "June 20-22, 2024",
+                location: "Seattle, WA",
+                participants: "250+",
+                description: `The Cyber Hack Challenge is a thrilling competition that puts your cybersecurity skills to the test. Participants will face real-world hacking scenarios, identifying vulnerabilities and developing creative solutions to protect against cyber threats.
+
+OBJECTIVE
+To identify talented individuals who can think like hackers and develop effective cybersecurity solutions to protect against evolving threats.
+
+COMPETITION FORMAT
+1. Online Round: Participants will complete a series of cybersecurity challenges, including penetration testing, vulnerability assessment, and incident response.
+2. On-Site Finals: Top performers will participate in a live hacking competition, where they'll have to identify and exploit vulnerabilities in a simulated environment.
+
+CHALLENGES
+1. Web Application Security: Identify and exploit vulnerabilities in web applications.
+2. Network Security: Conduct penetration testing and vulnerability assessment on network systems.
+3. Cryptography: Develop creative solutions to cryptographic challenges.
+
+JUDGING CRITERIA
+1. Technical Skills: Ability to identify and exploit vulnerabilities.
+2. Creativity: Originality and effectiveness of solutions.
+3. Speed: Time taken to complete challenges.
+
+PRIZES
+1. Cash Awards: For top performers who demonstrate exceptional cybersecurity skills.
+2. Internships: Opportunities with leading cybersecurity companies, providing hands-on experience and industry exposure.
+3. Certifications: Industry-recognized certifications, such as CompTIA Security+ or CEH.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for cybersecurity and hacking.
+
+Get ready to test your skills and take your cybersecurity expertise to the next level!`
+
+            },
+            6: {
+                title: "Cyber Hack Challenge 2025: Test Your Skills",
+                image: "https://i.ibb.co/WTqwkh6/6.png",
+                date: "June 18-20, 2025",
+                location: "Miami, FL",
+                participants: "Coming Soon",
+                description: `COMING SOON
+
+The Cyber Hack Challenge is a thrilling competition that puts your cybersecurity skills to the test. Participants will face real-world hacking scenarios, identifying vulnerabilities and developing creative solutions to protect against cyber threats.
+
+OBJECTIVE
+To identify talented individuals who can think like hackers and develop effective cybersecurity solutions to protect against evolving threats.
+
+COMPETITION FORMAT
+1. Online Round: Participants will complete a series of cybersecurity challenges, including penetration testing, vulnerability assessment, and incident response.
+2. On-Site Finals: Top performers will participate in a live hacking competition, where they'll have to identify and exploit vulnerabilities in a simulated environment.
+
+CHALLENGES
+1. Web Application Security: Identify and exploit vulnerabilities in web applications.
+2. Network Security: Conduct penetration testing and vulnerability assessment on network systems.
+3. Cryptography: Develop creative solutions to cryptographic challenges.
+
+JUDGING CRITERIA
+1. Technical Skills: Ability to identify and exploit vulnerabilities.
+2. Creativity: Originality and effectiveness of solutions.
+3. Speed: Time taken to complete challenges.
+
+PRIZES
+1. Cash Awards: For top performers who demonstrate exceptional cybersecurity skills.
+2. Internships: Opportunities with leading cybersecurity companies, providing hands-on experience and industry exposure.
+3. Certifications: Industry-recognized certifications, such as CompTIA Security+ or CEH.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for cybersecurity and hacking.
+
+Get ready to test your skills and take your cybersecurity expertise to the next level!`
+
+            },
+            7: {
+                title: "GEN AI GAMING HACKATHON 2024: Create the Future of Gaming",
+                image: "https://i.ibb.co/g2SQrwR/7.png",
+                date: "August 10-12, 2024",
+                location: "San Jose, CA",
+                participants: "180+",
+                description: `The GEN AI GAMING HACKATHON is a thrilling competition where participants will leverage AI and game development skills to create innovative gaming solutions. Join the hackathon to showcase your creativity and technical expertise.
+
+OBJECTIVE
+To identify talented individuals who can develop AI-powered gaming solutions, pushing the boundaries of what's possible in the gaming industry.
+
+COMPETITION FORMAT
+1. Online Round: Participants will complete AI and game development challenges, showcasing their skills in creating engaging gaming experiences.
+2. On-Site Finals: Top performers will collaborate on a real-world gaming project, incorporating AI and machine learning techniques.
+
+CHALLENGES
+1. AI-powered Game Development: Create games that utilize AI for dynamic gameplay, NPC behavior, and more.
+2. Gameplay Optimization: Develop AI-driven solutions to optimize gameplay, difficulty levels, and player engagement.
+3. Game Testing and QA: Use AI to automate game testing and QA processes.
+
+JUDGING CRITERIA
+1. Creativity: Originality and innovation in game development.
+2. Technical Skills: Proficiency in AI and game development technologies.
+3. Gameplay Experience: Engagement, fun, and overall quality of the gaming experience.
+
+PRIZES
+1. Cash Awards: For top performers who demonstrate exceptional AI and game development skills.
+2. Internships: Opportunities with leading game development companies, providing hands-on experience and industry exposure.
+3. Game Development Tools: Access to industry-leading game development tools and software.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for game development, AI, and machine learning.
+
+Get ready to unleash your creativity and develop the future of gaming with AI!`
+
+            },
+            8: {
+                title: "GEN AI GAMING HACKATHON 2025: Create the Future of Gaming",
+                image: "https://i.ibb.co/ds5nDBt4/8.png",
+                date: "August 15-17, 2025",
+                location: "Boston, MA",
+                participants: "220+",
+                description: `The GEN AI GAMING HACKATHON is a thrilling competition where participants will leverage AI and game development skills to create innovative gaming solutions. Join the hackathon to showcase your creativity and technical expertise.
+
+OBJECTIVE
+To identify talented individuals who can develop AI-powered gaming solutions, pushing the boundaries of what's possible in the gaming industry.
+
+COMPETITION FORMAT
+1. Online Round: Participants will complete AI and game development challenges, showcasing their skills in creating engaging gaming experiences.
+2. On-Site Finals: Top performers will collaborate on a real-world gaming project, incorporating AI and machine learning techniques.
+
+CHALLENGES
+1. AI-powered Game Development: Create games that utilize AI for dynamic gameplay, NPC behavior, and more.
+2. Gameplay Optimization: Develop AI-driven solutions to optimize gameplay, difficulty levels, and player engagement.
+3. Game Testing and QA: Use AI to automate game testing and QA processes.
+
+JUDGING CRITERIA
+1. Creativity: Originality and innovation in game development.
+2. Technical Skills: Proficiency in AI and game development technologies.
+3. Gameplay Experience: Engagement, fun, and overall quality of the gaming experience.
+
+PRIZES
+1. Cash Awards: For top performers who demonstrate exceptional AI and game development skills.
+2. Internships: Opportunities with leading game development companies, providing hands-on experience and industry exposure.
+3. Game Development Tools: Access to industry-leading game development tools and software.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for game development, AI, and machine learning.
+
+Get ready to unleash your creativity and develop the future of gaming with AI!`
+
+            },
+            9: {
+                title: "CODE AI 2023: AI-ML Coding Challenge",
+                image: "https://i.ibb.co/MkSYtf28/9.png",
+                date: "October 5-7, 2023",
+                location: "New York, NY",
+                participants: "190+",
+                description: `CODE AI is a premier coding competition that brings together programming expertise and AI-ML innovation. Participants will develop cutting-edge solutions using machine learning algorithms and AI techniques to solve real-world problems.
+
+OBJECTIVE
+To discover and nurture talented coders who can seamlessly integrate AI and ML into their solutions, driving innovation and problem-solving.
+
+COMPETITION FORMAT
+1. Online Qualifiers: Participants will complete AI-ML coding challenges within a set timeframe, showcasing their skills in developing innovative solutions.
+2. On-Site Finals: Top performers will collaborate on a real-world AI-ML project, presenting their solutions to a panel of industry experts.
+
+CHALLENGES
+1. Computer Vision: Develop AI-powered computer vision models for image classification, object detection, and more.
+2. NLP: Create innovative NLP solutions using machine learning algorithms for text analysis, sentiment analysis, and more.
+3. Predictive Analytics: Build predictive models using AI and ML techniques for forecasting, recommendation systems, and more.
+
+JUDGING CRITERIA
+1. Code Quality: Efficiency, readability, and maintainability of code.
+2. Innovation: Creativity and originality in AI-ML solution development.
+3. Accuracy: Performance and accuracy of AI-ML models.
+
+PRIZES
+1. Cash Awards: For top performers who showcase exceptional coding skills and innovation.
+2. Internships: Opportunities with leading AI-ML companies, providing hands-on experience and industry exposure.
+3. Mentorship: Guidance from industry experts in AI-ML, offering valuable insights and career advice.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for coding, AI, and ML. Whether you're a seasoned developer or just starting out, CODE AI is your chance to shine!
+
+Get ready to CODE AI and take your skills to the next level!`
+
+            },
+            10: {
+                title: "CODE AI 2024: AI-ML Coding Challenge",
+                image: "https://i.ibb.co/Df0XVmXG/10.png",
+                date: "October 10-12, 2024",
+                location: "Denver, CO",
+                participants: "210+",
+                description: `CODE AI is a premier coding competition that brings together programming expertise and AI-ML innovation. Participants will develop cutting-edge solutions using machine learning algorithms and AI techniques to solve real-world problems.
+
+OBJECTIVE
+To discover and nurture talented coders who can seamlessly integrate AI and ML into their solutions, driving innovation and problem-solving.
+
+COMPETITION FORMAT
+1. Online Qualifiers: Participants will complete AI-ML coding challenges within a set timeframe, showcasing their skills in developing innovative solutions.
+2. On-Site Finals: Top performers will collaborate on a real-world AI-ML project, presenting their solutions to a panel of industry experts.
+
+CHALLENGES
+1. Computer Vision: Develop AI-powered computer vision models for image classification, object detection, and more.
+2. NLP: Create innovative NLP solutions using machine learning algorithms for text analysis, sentiment analysis, and more.
+3. Predictive Analytics: Build predictive models using AI and ML techniques for forecasting, recommendation systems, and more.
+
+JUDGING CRITERIA
+1. Code Quality: Efficiency, readability, and maintainability of code.
+2. Innovation: Creativity and originality in AI-ML solution development.
+3. Accuracy: Performance and accuracy of AI-ML models.
+
+PRIZES
+1. Cash Awards: For top performers who showcase exceptional coding skills and innovation.
+2. Internships: Opportunities with leading AI-ML companies, providing hands-on experience and industry exposure.
+3. Mentorship: Guidance from industry experts in AI-ML, offering valuable insights and career advice.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for coding, AI, and ML. Whether you're a seasoned developer or just starting out, CODE AI is your chance to shine!
+
+Get ready to CODE AI and take your skills to the next level!`
+
+            },
+            11: {
+                title: "CODE AI 2025: AI-ML Coding Challenge",
+                image: "https://i.ibb.co/4ggnYKHF/11.png",
+                date: "October 8-10, 2025",
+                location: "Portland, OR",
+                participants: "250+",
+                description: `CODE AI is a premier coding competition that brings together programming expertise and AI-ML innovation. Participants will develop cutting-edge solutions using machine learning algorithms and AI techniques to solve real-world problems.
+
+OBJECTIVE
+To discover and nurture talented coders who can seamlessly integrate AI and ML into their solutions, driving innovation and problem-solving.
+
+COMPETITION FORMAT
+1. Online Qualifiers: Participants will complete AI-ML coding challenges within a set timeframe, showcasing their skills in developing innovative solutions.
+2. On-Site Finals: Top performers will collaborate on a real-world AI-ML project, presenting their solutions to a panel of industry experts.
+
+CHALLENGES
+1. Computer Vision: Develop AI-powered computer vision models for image classification, object detection, and more.
+2. NLP: Create innovative NLP solutions using machine learning algorithms for text analysis, sentiment analysis, and more.
+3. Predictive Analytics: Build predictive models using AI and ML techniques for forecasting, recommendation systems, and more.
+
+JUDGING CRITERIA
+1. Code Quality: Efficiency, readability, and maintainability of code.
+2. Innovation: Creativity and originality in AI-ML solution development.
+3. Accuracy: Performance and accuracy of AI-ML models.
+
+PRIZES
+1. Cash Awards: For top performers who showcase exceptional coding skills and innovation.
+2. Internships: Opportunities with leading AI-ML companies, providing hands-on experience and industry exposure.
+3. Mentorship: Guidance from industry experts in AI-ML, offering valuable insights and career advice.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for coding, AI, and ML. Whether you're a seasoned developer or just starting out, CODE AI is your chance to shine!
+
+Get ready to CODE AI and take your skills to the next level!`
+
+            },
+            12: {
+                title: "CodeCrunch 2024: AI-ML Coding Competition",
+                image: "https://i.ibb.co/B550KfCr/12.png",
+                date: "December 12-14, 2024",
+                location: "Atlanta, GA",
+                participants: "160+",
+                description: `CodeCrunch is a unique coding competition that combines programming skills with AI and ML concepts. Participants must develop innovative solutions using machine learning algorithms and AI techniques.
+
+OBJECTIVE
+To identify talented coders who can effectively integrate AI and ML into their solutions, driving innovation and problem-solving.
+
+COMPETITION FORMAT
+1. Online Qualifiers: Participants complete AI-ML coding challenges within a set timeframe.
+2. On-Site Finals: Top performers collaborate on a real-world AI-ML project, presenting their solutions to a panel of judges.
+
+CHALLENGES
+1. Image Classification: Develop AI-powered image classification models.
+2. Natural Language Processing: Create innovative NLP solutions using machine learning algorithms.
+3. Predictive Modeling: Build predictive models using AI and ML techniques.
+
+JUDGING CRITERIA
+1. Code Quality: Efficiency, readability, and maintainability.
+2. Innovation: Creativity and originality in AI-ML solution development.
+3. Accuracy: Performance and accuracy of AI-ML models.
+
+PRIZES
+1. Cash Awards: For top performers.
+2. Internships: Opportunities with leading AI-ML companies.
+3. Mentorship: Guidance from industry experts in AI-ML.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for coding, AI, and ML.`
+
+            },
+            13: {
+                title: "CodeCrunch 2023: AI-ML Coding Competition",
+                image: "https://i.ibb.co/4wnh9KN0/13.png",
+                date: "December 8-10, 2023",
+                location: "Phoenix, AZ",
+                participants: "140+",
+                description: `CodeCrunch is a unique coding competition that combines programming skills with AI and ML concepts. Participants must develop innovative solutions using machine learning algorithms and AI techniques.
+
+OBJECTIVE
+To identify talented coders who can effectively integrate AI and ML into their solutions, driving innovation and problem-solving.
+
+COMPETITION FORMAT
+1. Online Qualifiers: Participants complete AI-ML coding challenges within a set timeframe.
+2. On-Site Finals: Top performers collaborate on a real-world AI-ML project, presenting their solutions to a panel of judges.
+
+CHALLENGES
+1. Image Classification: Develop AI-powered image classification models.
+2. Natural Language Processing: Create innovative NLP solutions using machine learning algorithms.
+3. Predictive Modeling: Build predictive models using AI and ML techniques.
+
+JUDGING CRITERIA
+1. Code Quality: Efficiency, readability, and maintainability.
+2. Innovation: Creativity and originality in AI-ML solution development.
+3. Accuracy: Performance and accuracy of AI-ML models.
+
+PRIZES
+1. Cash Awards: For top performers.
+2. Internships: Opportunities with leading AI-ML companies.
+3. Mentorship: Guidance from industry experts in AI-ML.
+
+ELIGIBILITY
+Open to students, professionals, and enthusiasts with a passion for coding, AI, and ML.`
+
+            }
+        };
+
+        // Load event data
+        const event = eventData[eventId];
+        if (!event) {
+            window.location.href = 'index.html#events';
+            return;
+        }
+
+        // Update page with event data
+        document.title = `${event.title} - Hackathon Raccoon`;
+        document.getElementById('event-title').textContent = event.title;
+        document.getElementById('event-image').src = event.image;
+        document.getElementById('event-image').alt = event.title;
+        document.getElementById('event-date').textContent = event.date;
+        document.getElementById('event-location').textContent = event.location;
+        document.getElementById('event-participants').textContent = event.participants;
+        document.getElementById('event-description').textContent = event.description;
+
+        // Handle comment form submission
+        document.getElementById('comment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const comment = document.getElementById('comment').value;
+
+            if (!name || !email || !comment) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // In a real application, you would send this data to a server
+            // For now, we'll just add it to the page
+            addComment(name, comment);
+
+            // Clear the form
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('comment').value = '';
+        });
+
+        // Load sample comments
+        loadSampleComments(eventId);
+    });
+
+    function addComment(name, content) {
+        const commentsList = document.getElementById('comments-list');
+        const date = new Date().toLocaleDateString();
+
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment';
+        commentElement.innerHTML = `
+            <div class="comment-author">${name} <span class="comment-date">${date}</span></div>
+            <div class="comment-content">${content}</div>
+        `;
+
+        commentsList.prepend(commentElement);
+    }
+
+    function loadSampleComments(eventId) {
+        // In a real application, you would load comments from a database
+        // For now, we'll just add some sample comments
+        const sampleComments = {
+            1: [
+                { name: "Alex Rodriguez", content: "The robot battles were absolutely incredible! Our team's design held up well against the competition. Can't wait for next year!", date: "March 20, 2023" },
+                { name: "Sarah Kim", content: "Amazing event! The mentorship opportunities were invaluable. I learned so much about advanced control systems and battle strategies.", date: "March 19, 2023" },
+                { name: "Mike Chen", content: "ROBOT WARS exceeded all expectations. The arena setup was professional and the judging was fair. Great prizes too!", date: "March 18, 2023" }
+            ],
+            2: [
+                { name: "Jessica Wong", content: "ROBOT WARS 2024 was even better than last year! The competition was fierce and the new arena features were amazing.", date: "March 25, 2024" },
+                { name: "David Park", content: "Our team learned so much from this experience. The judges provided excellent feedback on our robot design.", date: "March 24, 2024" }
+            ],
+            4: [
+                { name: "Marcus Johnson", content: "The Cyber Hack Challenge really tested our skills! The web application security challenges were particularly tough but rewarding.", date: "June 20, 2023" },
+                { name: "Lisa Chen", content: "Great event for cybersecurity enthusiasts. The networking opportunities and mentorship were invaluable.", date: "June 19, 2023" }
+            ],
+            7: [
+                { name: "Ryan Mitchell", content: "The AI Gaming Hackathon was incredible! Our team developed an AI-powered NPC system that really impressed the judges.", date: "August 15, 2024" },
+                { name: "Emma Davis", content: "Amazing to see how AI can revolutionize gaming. The workshops on machine learning for games were super helpful.", date: "August 14, 2024" }
+            ],
+            9: [
+                { name: "Kevin Zhang", content: "CODE AI 2023 was challenging but so rewarding! The computer vision challenges really pushed our skills to the limit.", date: "October 10, 2023" },
+                { name: "Sophia Rodriguez", content: "Loved the focus on practical AI applications. The mentorship from industry experts was the highlight for me.", date: "October 9, 2023" }
+            ]
+        };
+
+        const comments = sampleComments[eventId] || [];
+        const commentsList = document.getElementById('comments-list');
+
+        if (comments.length === 0) {
+            commentsList.innerHTML = '<p>No comments yet. Be the first to share your thoughts!</p>';
+            return;
+        }
+
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.className = 'comment';
+            commentElement.innerHTML = `
+                <div class="comment-author">${comment.name} <span class="comment-date">${comment.date}</span></div>
+                <div class="comment-content">${comment.content}</div>
+            `;
+
+            commentsList.appendChild(commentElement);
+        });
+    }
+</script>
+</body>
+</html>
